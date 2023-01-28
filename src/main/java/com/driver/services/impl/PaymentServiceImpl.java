@@ -23,13 +23,13 @@ public class PaymentServiceImpl implements PaymentService {
         Reservation reservation = reservationRepository2.findById(reservationId).get();
         reservation.getSpot().setOccupied(false);
 
-        if(mode.equals("cash")){
+        if(mode.equalsIgnoreCase("cash")){
             paymentMode=PaymentMode.CASH;
         }
-        else if (mode.equals("card")) {
+        else if (mode.equalsIgnoreCase("card")) {
             paymentMode=PaymentMode.CARD;
         }
-        else if (mode.equals("upi")) {
+        else if (mode.equalsIgnoreCase("upi")) {
             paymentMode=PaymentMode.UPI;
         }
         else{
