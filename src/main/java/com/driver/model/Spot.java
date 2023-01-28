@@ -1,6 +1,7 @@
 package com.driver.model;
 
 import javax.persistence.*;
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity
@@ -30,6 +31,7 @@ public class Spot {
         this.spotType = spotType;
         this.pricePerHour = pricePerHour;
         this.occupied = occupied;
+        this.reservationList = new ArrayList<>();
 
     }
 
