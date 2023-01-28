@@ -21,14 +21,9 @@ public class ParkingLotServiceImpl implements ParkingLotService {
 
     @Override
     public ParkingLot addParkingLot(String name, String address) {
-        ParkingLot parkingLot = null;
-        try {
-            parkingLot = new ParkingLot(name,address);
-            parkingLotRepository1.save(parkingLot);
-        }catch (NullPointerException e){
-            return parkingLot;
-        }
 
+        ParkingLot parkingLot = new ParkingLot(name,address);
+        parkingLotRepository1.save(parkingLot);
         return parkingLot;
     }
 
