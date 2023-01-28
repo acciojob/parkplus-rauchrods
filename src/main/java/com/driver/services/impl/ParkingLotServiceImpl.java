@@ -21,12 +21,12 @@ public class ParkingLotServiceImpl implements ParkingLotService {
 
     @Override
     public ParkingLot addParkingLot(String name, String address) {
-        ParkingLot parkingLot;
+        ParkingLot parkingLot = null;
         try {
             parkingLot = new ParkingLot(name,address);
             parkingLotRepository1.save(parkingLot);
         }catch (NullPointerException e){
-            return null;
+            return parkingLot;
         }
 
         return parkingLot;
